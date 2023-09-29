@@ -5,45 +5,223 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nikhil Jadhav</title>
+        <link rel="icon" href="./images/logo_4.png">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/media.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     </head>
     
     <body>
+        <!-- stats - count particles -->
+        <div id="particles-js"> </div>
         <div class="outline">
             <section id="nav" class="nav">
-                <div id="brand">
-                    <a class="brand" href="#nav">
-                        <img class="logo" id="logo" src="./images/logo_1.png" alt="Home">
-                        <span>Nikhil Jadhav</span>
-                    </a>
-                </div>
-                <div class="menu-items" id="menu-items">
-                    <a class="menu-item" href="#about">About</a>
-                    <a class="menu-item" href="#articles">Articles</a>
-                    <a class="menu-item" href="#projects">Projects</a>
-                </div>
+                <nav>
+                    <div id="brand">
+                        <a class="brand" href="./index.html">
+                            <img class="logo" id="logo" src="./images/logo_3.png" alt="Home">
+                            <span>Nikhil Jadhav</span>
+                        </a>
+                    </div>
+                    <div class="menu-items" id="menu-items">
+                        <a onclick="hideAllExceptNav(); changeVisibility('about','show');" class="menu-item" href="javascript:;">About</a>
+                        <a onclick="hideAllExceptNav(); changeVisibility('articles','show');" class="menu-item" href="javascript:;">Articles</a>
+                        <a onclick="hideAllExceptNav(); changeVisibility('projects','show');" class="menu-item" href="javascript:;">Projects</a>
+                    </div>
+                </nav> 
             </section>
 
             <div class="spacer"></div>
 
-            <section class="main-content">
+            <section id="main-content" class="main-content">
                 <div class="container">
                     <div class="content">
                         <div class="intro">
                             <h1>Hi, I'm Nikhil</h1>
-                            <p class="intro-1">Full Stack Web Developer with <a style="font-weight: bold;" href="https://www.iit.edu/academics/programs/computer-science-mas">Masters in Computer Science</a> from <a style="font-weight: bold;" href="https://www.iit.edu/">Illinois Institute of Technology</a> and a strong foundation in front-end and back-end development. With 3.5 years of experience at <a style="font-weight: bold;" href="https://www.fiserv.com/en.html">Fiserv Inc.</a> and <a style="font-weight: bold;" href="https://www.boehringer-ingelheim.com/">Boehringer Ingelheim</a>, I have a deep understanding of the web development process and a keen eye for crafting intuitive user interfaces.</p>
+                            <p class="intro-1">Full Stack Web Developer with <a style="font-weight: bold;" href="https://www.iit.edu/academics/programs/computer-science-mas">Masters in Computer Science</a> from <a style="font-weight: bold;" href="https://www.iit.edu/">Illinois Institute of Technology</a> and a strong foundation in front-end and back-end development.</p>
+                            <p class="intro-1">With 3.5 years of experience at <a style="font-weight: bold;" href="https://www.fiserv.com/en.html">Fiserv Inc.</a> and <a style="font-weight: bold;" href="https://www.boehringer-ingelheim.com/">Boehringer Ingelheim</a>, I have a deep understanding of the web development process and a keen eye for crafting intuitive user interfaces.</p>
                         </div>
                         <div class="flashcard">
                             <img class="myPic" src="./images/myPic.jpg" alt="Nikhil">
                             <p style="font-size:x-large">Nikhil Jadhav</p>
                             <p style="font-size:x-large; display: flex; flex-direction: row; justify-content: center; align-items: center;">Illinois Tech '23 <img class="hawk-iit" src="./images/hawk.png" alt="Scarlet Hawk"></p>
+                            <div class="footer-container">
+                                <div class="footer-logos">
+                                    <a href="mailto:jadhavnikhil953@gmail.com"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxyZWN0IHg9IjIzNS41ODYiIHk9IjM2MS42OTIiIHN0eWxlPSJmaWxsOiNGOTlEODg7IiB3aWR0aD0iNDAuODE3IiBoZWlnaHQ9IjE0Mi4wNSIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGRDI0RDsiIGQ9Ik0zNzEuNjEyLDEyOS4zNzZjLTE4Ljk5NiwwLTIzMS4yMjYsMC0yMzEuMjI2LDBsOTUuMjAzLDI1NC4zMzJoMjMxLjIyNlYyMjQuNTgNCglDNDY2LjgxNiwxNzIuMDAxLDQyNC4xOTIsMTI5LjM3NiwzNzEuNjEyLDEyOS4zNzZ6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojRkVFMTkxOyIgZD0iTTE0MC4zODcsMTI5LjM3NmMtNTIuNTgsMC05NS4yMDMsNDIuNjI1LTk1LjIwMyw5NS4yMDN2MTU5LjEyOUgyMzUuNTlWMjI0LjU4DQoJQzIzNS41OSwxNzIuMDAxLDE5Mi45NjYsMTI5LjM3NiwxNDAuMzg3LDEyOS4zNzZ6Ii8+DQo8cGF0aCBzdHlsZT0iZmlsbDojRjE0NzQyOyIgZD0iTTM1OS4yMDQsOC4yNThoLTc0LjUzN2wtOC4yNTgsNjMuODYyaDgyLjc5NWM1LjQ3MywwLDkuOTEtNC40MzYsOS45MS05LjkxVjE4LjE2OA0KCUMzNjkuMTE0LDEyLjY5NCwzNjQuNjc3LDguMjU4LDM1OS4yMDQsOC4yNTh6Ii8+DQo8cGF0aCBkPSJNMzcxLjYxMiwxMjEuMTE4aC02Mi4xNzFjLTQuNTYxLDAtOC4yNTgsMy42OTYtOC4yNTgsOC4yNThjMCw0LjU2MiwzLjY5Nyw4LjI1OCw4LjI1OCw4LjI1OGg2Mi4xNzENCgljNDcuOTQyLDAsODYuOTQ1LDM5LjAwMyw4Ni45NDUsODYuOTQ1djE1MC44N2gtMjE0LjcxVjIyNC41OGMwLTM2LjQyLTE4LjkxOS02OC41MDMtNDcuNDQzLTg2Ljk0NWg0Ni45NzENCgljNC41NjEsMCw4LjI1OC0zLjY5Niw4LjI1OC04LjI1OHMtMy42OTctOC4yNTgtOC4yNTgtOC4yNThIMTQwLjM4N2MtNTcuMDQ5LDAtMTAzLjQ2MSw0Ni40MTMtMTAzLjQ2MSwxMDMuNDYxdjE1OS4xMjgNCgljMCw0LjU2MiwzLjY5Nyw4LjI1OCw4LjI1OCw4LjI1OGgxODIuMTV2MTExLjc3NmMwLDQuNTYyLDMuNjk3LDguMjU4LDguMjU4LDguMjU4czguMjU4LTMuNjk2LDguMjU4LTguMjU4VjM5MS45NjZoMjQuMzAydjExMS43NzYNCgljMCw0LjU2MiwzLjY5Nyw4LjI1OCw4LjI1OCw4LjI1OHM4LjI1OC0zLjY5Niw4LjI1OC04LjI1OFYzOTEuOTY2aDE4Mi4xNWM0LjU2MSwwLDguMjU4LTMuNjk2LDguMjU4LTguMjU4VjIyNC41OA0KCUM0NzUuMDc0LDE2Ny41MzEsNDI4LjY2MSwxMjEuMTE4LDM3MS42MTIsMTIxLjExOHogTTUzLjQ0MSwyMjQuNThjMC00Ny45NDIsMzkuMDAzLTg2Ljk0NSw4Ni45NDUtODYuOTQ1DQoJczg2Ljk0NSwzOS4wMDMsODYuOTQ1LDg2Ljk0NXYxNTAuODdINTMuNDQxVjIyNC41OHoiLz4NCjxwYXRoIGQ9Ik0yNzYuNDA5LDMxMi40MDNjNC41NjEsMCw4LjI1OC0zLjY5Niw4LjI1OC04LjI1OFY4MC4zNzhoNzQuNTM3YzEwLjAxOCwwLDE4LjE2OC04LjE1LDE4LjE2OC0xOC4xNjhWMTguMTY4DQoJQzM3Ny4zNzIsOC4xNSwzNjkuMjIyLDAsMzU5LjIwNCwwaC04Mi43OTVjLTQuNTYxLDAtOC4yNTgsMy42OTYtOC4yNTgsOC4yNTh2Mjk1Ljg4Ng0KCUMyNjguMTUxLDMwOC43MDUsMjcxLjg0OCwzMTIuNDAzLDI3Ni40MDksMzEyLjQwM3ogTTM2MC44NTUsMTguMTY4djQ0LjA0M2MwLDAuOTExLTAuNzQxLDEuNjUyLTEuNjUyLDEuNjUyaC03NC41MzdWMTYuNTE2aDc0LjUzNw0KCUMzNjAuMTE1LDE2LjUxNiwzNjAuODU1LDE3LjI1NywzNjAuODU1LDE4LjE2OHoiLz4NCjxwYXRoIGQ9Ik0xNDAuMzg3LDE3Ni4xNzJjLTQuNTYxLDAtOC4yNTgsMy42OTYtOC4yNTgsOC4yNTh2MjUuMzI1YzAsNC41NjIsMy42OTcsOC4yNTgsOC4yNTgsOC4yNThzOC4yNTgtMy42OTYsOC4yNTgtOC4yNThWMTg0LjQzDQoJQzE0OC42NDUsMTc5Ljg2OCwxNDQuOTQ3LDE3Ni4xNzIsMTQwLjM4NywxNzYuMTcyeiIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" alt="Email"></a>
+                                    <a href="https://ww.discordapp.com/users/NEMESIS_NJ#8714"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+Cjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIwIDAuNSAyNCAyNCIgaWQ9Im1ldGVvci1pY29uLWtpdF9fcmVndWxhci1kaXNjb3JkIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoNPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzUyNV82OCkiPgoNPHBhdGggZD0iTTIwLjMxNyA0LjU0MTAxQzE4Ljc4NzMgMy44Mjc3NCAxNy4xNDcgMy4zMDIyNCAxNS40MzE5IDMuMDAxMjZDMTUuNDAwNyAyLjk5NTQ1IDE1LjM2OTUgMy4wMDk5NyAxNS4zNTM0IDMuMDM5QzE1LjE0MjQgMy40MjAzIDE0LjkwODcgMy45MTc3NCAxNC43NDUxIDQuMzA4NzNDMTIuOTAwNCA0LjAyODA4IDExLjA2NTIgNC4wMjgwOCA5LjI1ODMyIDQuMzA4NzNDOS4wOTQ2NSAzLjkwOTA1IDguODUyNDggMy40MjAzIDguNjQwNTcgMy4wMzlDOC42MjQ0OCAzLjAxMDk0IDguNTkzMjggMi45OTY0MiA4LjU2MjA1IDMuMDAxMjZDNi44NDc5MSAzLjMwMTI4IDUuMjA3NTYgMy44MjY3OCAzLjY3NjkzIDQuNTQxMDFDMy42NjM2OCA0LjU0NjgxIDMuNjUyMzMgNC41NTY1IDMuNjQ0NzkgNC41NjkwN0MwLjUzMzM5MiA5LjI5MjgzIC0wLjMxODk1IDEzLjkwMDUgMC4wOTkxODAxIDE4LjQ1MUMwLjEwMTA3MiAxOC40NzMzIDAuMTEzMzcgMTguNDk0NiAwLjEzMDM5OCAxOC41MDgxQzIuMTgzMjEgMjAuMDQwMSA0LjE3MTcxIDIwLjk3MDEgNi4xMjMyOCAyMS41ODY2QzYuMTU0NTEgMjEuNTk2MyA2LjE4NzYxIDIxLjU4NDcgNi4yMDc0OCAyMS41NTg1QzYuNjY5MTMgMjAuOTE3OSA3LjA4MDY0IDIwLjI0MjQgNy40MzM0OCAxOS41MzJDNy40NTQzIDE5LjQ5MDQgNy40MzQ0MiAxOS40NDEgNy4zOTE4NiAxOS40MjQ2QzYuNzM5MTMgMTkuMTczIDYuMTE3NiAxOC44NjYyIDUuNTE5NzMgMTguNTE3OEM1LjQ3MjQ0IDE4LjQ4OTcgNS40Njg2NSAxOC40MjEgNS41MTIxNiAxOC4zODgxQzUuNjM3OTcgMTguMjkyMyA1Ljc2MzgyIDE4LjE5MjYgNS44ODM5NiAxOC4wOTE5QzUuOTA1NjkgMTguMDczNiA1LjkzNTk4IDE4LjA2OTcgNS45NjE1MyAxOC4wODEzQzkuODg5MjggMTkuOTAzNiAxNC4xNDE1IDE5LjkwMzYgMTguMDIzIDE4LjA4MTNDMTguMDQ4NSAxOC4wNjg3IDE4LjA3ODggMTguMDcyNiAxOC4xMDE1IDE4LjA5MUMxOC4yMjE2IDE4LjE5MTYgMTguMzQ3NSAxOC4yOTIzIDE4LjQ3NDIgMTguMzg4MUMxOC41MTc3IDE4LjQyMSAxOC41MTQ5IDE4LjQ4OTcgMTguNDY3NiAxOC41MTc4QzE3Ljg2OTcgMTguODcyOSAxNy4yNDgyIDE5LjE3MyAxNi41OTQ1IDE5LjQyMzZDMTYuNTUyIDE5LjQ0MDEgMTYuNTMzIDE5LjQ5MDQgMTYuNTUzOCAxOS41MzJDMTYuOTE0MyAyMC4yNDE0IDE3LjMyNTggMjAuOTE2OSAxNy43Nzg5IDIxLjU1NzZDMTcuNzk3OCAyMS41ODQ3IDE3LjgzMTkgMjEuNTk2MyAxNy44NjMxIDIxLjU4NjZDMTkuODI0MSAyMC45NzAxIDIxLjgxMjYgMjAuMDQwMSAyMy44NjU0IDE4LjUwODFDMjMuODgzNCAxOC40OTQ2IDIzLjg5NDggMTguNDc0MiAyMy44OTY3IDE4LjQ1MkMyNC4zOTcxIDEzLjE5MTEgMjMuMDU4NSA4LjYyMTIgMjAuMzQ4MiA0LjU3MDA0QzIwLjM0MTYgNC41NTY1IDIwLjMzMDMgNC41NDY4MSAyMC4zMTcgNC41NDEwMVpNOC4wMjAwMiAxNS42ODAyQzYuODM3NSAxNS42ODAyIDUuODYzMTMgMTQuNTc3IDUuODYzMTMgMTMuMjIyQzUuODYzMTMgMTEuODY3MSA2LjgxODYgMTAuNzYzOSA4LjAyMDAyIDEwLjc2MzlDOS4yMzA4NyAxMC43NjM5IDEwLjE5NTggMTEuODc2OCAxMC4xNzY5IDEzLjIyMkMxMC4xNzY5IDE0LjU3NyA5LjIyMTQxIDE1LjY4MDIgOC4wMjAwMiAxNS42ODAyWk0xNS45OTQ3IDE1LjY4MDJDMTQuODEyMyAxNS42ODAyIDEzLjgzNzkgMTQuNTc3IDEzLjgzNzkgMTMuMjIyQzEzLjgzNzkgMTEuODY3MSAxNC43OTMzIDEwLjc2MzkgMTUuOTk0NyAxMC43NjM5QzE3LjIwNTYgMTAuNzYzOSAxOC4xNzA1IDExLjg3NjggMTguMTUxNiAxMy4yMjJDMTguMTUxNiAxNC41NzcgMTcuMjA1NiAxNS42ODAyIDE1Ljk5NDcgMTUuNjgwMloiIGZpbGw9IiM3NThDQTMiLz4KDTwvZz4KDTxkZWZzPgoNPGNsaXBQYXRoIGlkPSJjbGlwMF81MjVfNjgiPgoNPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSJ3aGl0ZSIvPgoNPC9jbGlwUGF0aD4KDTwvZGVmcz4KDTwvc3ZnPg==" alt="discord"></a>
+                                    <a href="https://www.linkedin.com/in/nikhil-jadhav-a13389125/"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2cHgiIGhlaWdodD0iMjU2cHgiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0wIDE4LjMzOEMwIDguMjE2IDguNDc0IDAgMTguOTIgMGgyMTguMTZDMjQ3LjUzIDAgMjU2IDguMjE2IDI1NiAxOC4zMzh2MjE5LjMyN0MyNTYgMjQ3Ljc5IDI0Ny41MyAyNTYgMjM3LjA4IDI1NkgxOC45MkM4LjQ3NSAyNTYgMCAyNDcuNzkxIDAgMjM3LjY2OFYxOC4zMzV6IiBmaWxsPSIjMDA4NGIxIi8+PHBhdGggZD0iTTc3Ljc5NiAyMTQuMjM4Vjk4Ljk4NkgzOS40ODh2MTE1LjI1Mkg3Ny44ek01OC42NSA4My4yNTNjMTMuMzU2IDAgMjEuNjcxLTguODUgMjEuNjcxLTE5LjkxLS4yNS0xMS4zMTItOC4zMTUtMTkuOTE1LTIxLjQxNy0xOS45MTUtMTMuMTExIDAtMjEuNjc0IDguNjAzLTIxLjY3NCAxOS45MTQgMCAxMS4wNiA4LjMxMiAxOS45MSAyMS4xNjkgMTkuOTFoLjI0OHpNOTkgMjE0LjIzOGgzOC4zMDV2LTY0LjM1NWMwLTMuNDQuMjUtNi44ODkgMS4yNjItOS4zNDYgMi43NjgtNi44ODUgOS4wNzEtMTQuMDEyIDE5LjY1Ni0xNC4wMTIgMTMuODU4IDAgMTkuNDA1IDEwLjU2OCAxOS40MDUgMjYuMDYzdjYxLjY1aDM4LjMwNHYtNjYuMDgyYzAtMzUuMzk5LTE4Ljg5Ni01MS44NzItNDQuMDk5LTUxLjg3Mi0yMC42NjMgMC0yOS43MzggMTEuNTQ5LTM0Ljc4IDE5LjQxNWguMjU1Vjk4Ljk5SDk5LjAwMmMuNSAxMC44MTItLjAwMyAxMTUuMjUyLS4wMDMgMTE1LjI1MnoiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+" alt="linkedIn"></a>
+                                    <a href="https://github.com/jadhavnikhil953"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI5MS4zMiAyOTEuMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5MS4zMiAyOTEuMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiMyQjQxNEQ7IiBkPSJNMTQ1LjY2LDBDNjUuMjE5LDAsMCw2NS4yMTksMCwxNDUuNjZjMCw4MC40NSw2NS4yMTksMTQ1LjY2LDE0NS42NiwxNDUuNjYNCgkJczE0NS42Ni02NS4yMSwxNDUuNjYtMTQ1LjY2QzI5MS4zMTksNjUuMjE5LDIyNi4xLDAsMTQ1LjY2LDB6IE0xODYuNDYyLDI1Ni42MjVjLTAuODM4LTExLjM5OC0xLjc3NS0yNS41MTgtMS44My0zMS4yMzUNCgkJYy0wLjM2NC00LjM4OC0wLjgzOC0xNS41NDktMTEuNDM0LTIyLjY3N2M0Mi4wNjgtMy41MjMsNjIuMDg3LTI2Ljc3NCw2My41MjYtNTcuNDk5YzEuMjAyLTE3LjQ5Ny01Ljc1NC0zMi44ODMtMTguMTA3LTQ1LjMNCgkJYzAuNjI4LTEzLjI4Mi0wLjQwMS0yOS4wMjMtMS4yNTYtMzUuOTQxYy05LjQ4Ni0yLjczMS0zMS42MDgsOC45NDktMzcuNzksMTMuOTQ3Yy0xMy4wMzctNS4wNjItNDQuOTQ1LTYuODM3LTY0LjMzNiwwDQoJCWMtMTMuNzQ3LTkuNjY4LTI5LjM5Ni0xNS42NC0zNy45MjYtMTMuOTc0Yy03Ljg3NSwxNy40NTItMi44MTMsMzMuOTQ4LTEuMjc1LDM1LjkxNGMtMTAuMTQyLDkuMjY4LTI0LjI4OSwyMC42NzUtMjAuNDQ3LDQ0LjU3Mg0KCQljNi4xNjMsMzUuMDQsMzAuODE2LDUzLjk0LDcwLjUwOCw1OC41NjRjLTguNDY2LDEuNzMtOS44OTYsOC4wNDgtMTAuNjA2LDEwLjc4OGMtMjYuNjU2LDEwLjk5Ny0zNC4yNzUtNi43OTEtMzcuNjQ0LTExLjQyNQ0KCQljLTExLjE4OC0xMy44NDctMjEuMjMtOS44MzItMjEuODQ5LTkuNjE0Yy0wLjYwMSwwLjIxOC0xLjA1NiwxLjA5Mi0wLjk5MiwxLjUxMWMwLjU2NCwyLjk4Niw2LjY1NSw2LjAxOCw2Ljk1NSw2LjI2Mw0KCQljOC4yNTcsNi4xNTQsMTEuMzE2LDE3LjI3LDEzLjIsMjAuNDM4YzExLjg0NCwxOS40NzMsMzkuMzc0LDExLjM5OCwzOS42MzgsMTEuNTYyYzAuMDE4LDEuNzAyLTAuMTkxLDE2LjAzMi0wLjM1NSwyNy4xODQNCgkJQzY0LjI0NSwyNDUuOTkyLDI3LjMxMSwyMDAuMiwyNy4zMTEsMTQ1LjY2YzAtNjUuMzY1LDUyLjk4NC0xMTguMzQ4LDExOC4zNDgtMTE4LjM0OFMyNjQuMDA4LDgwLjI5NSwyNjQuMDA4LDE0NS42Ng0KCQlDMjY0LjAwOCwxOTYuNjY4LDIzMS42OSwyMzkuOTkyLDE4Ni40NjIsMjU2LjYyNXoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
+                    <div id="tech-stack" class="tech-stack">
+                        <h2 style="position: relative;">Technology Stack</h2>
+                        <p style="position: relative;">Following are some of the technologies I work on:</p>
+                        <div class="tech-stack-logos">
+                            <a href="https://portal.azure.com/"><img src="./images/azure.png" alt="azure"></a>
+                            <a href="https://aws.amazon.com/"><img src="./images/aws.png" alt="aws"></a>
+                            <a href="https://www.mongodb.com/"><img src="./images/mongodb.png" alt="mongodb"></a>
+                            <a href="https://www.mysql.com/"><img src="./images/mysql.png" alt="mysql"></a>
+                            <a href="https://www.angular.io/"><img src="./images/angular.png" alt="angular"></a>
+                            <a href="https://nodejs.org/en"><img src="./images/node.png" alt="node.js"></a>
+                            <a href="https://www.javascript.com/"><img src="./images/jscript.png" alt="javascript"></a>
+                            <a href="https://www.typescriptlang.org/"><img src="./images/ts.png" alt="typescript"></a>
+                            <a href="https://www.java.com/en/"><img src="./images/java.png" alt="java"></a>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <section id="about" style="display: none;" class="about">
+                <div class="about-container">
+                    <span>This is About</span>
+                </div>
+            </section>
+
+            <section id="articles" style="display: none;" class="articles">
+                <div class="articles-container">
+                    <span>This is Articles</span>
+                </div>
+            </section>
+
+            <section id="projects" style="display: none;" class="projects">
+                <div class="projects-container">
+
+                    <div class="spacer"></div>
+
+                    <div class="closed-box bg-1">
+                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/imac.png" width="200px"> -->
+                        <h3>RESTApi <br> OpenAI <br> GPT3 </h3>
+                        <p>View</p>
+                    </div>
+                    <div class="closed-box bg-2">
+                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/imac.png" width="200px"> -->
+                        <h3>RESTApi <br> Mongoose and FileRead </h3>
+                        <p>View</p>
+                    </div>
+                    <div class="closed-box bg-3">
+                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/imac.png" width="200px"> -->
+                        <h3>Login Signup & Change Password Flow with Adaptive Cards </h3>
+                        <p>View</p>
+                    </div>
+                    
+                    <div class="open-box">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/cancel-button.png" class="close-button">
+                        <h1>Node.js RESTApi to fetch results for prompt using OpenAI GPT3 model endpoint and openai npm package</h1>
+                        <p>
+                            <h4 style="display: inline-block">URL:</h4> https://github.com/jadhavnikhil953/RESTApi_OpenAI_GPT3</p>
+                        <p>
+                            <h4 style="display: inline-block">What I did:</h4> Javascript, Node.js, design</p>
+                        <p>
+                            <h4 style="display: inline-block">Description:</h4> This light-weight simple-structured API uses openai npm package to make calls and fetch response for prompts </p>
+                        <div class="view-button">view</div>
+                    </div>
+
+                    <div class="open-box">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/cancel-button.png" class="close-button">
+                        <h1>Node.js RESTApi to fetch data from MongoDB and read content from file hosted on Express.js server</h1>
+                        <p>
+                            <h4 style="display: inline-block">URL:</h4> https://github.com/jadhavnikhil953/RESTApi_Mongoose_and_FileRead</p>
+                        <p>
+                            <h4 style="display: inline-block">What I did:</h4> Javascript, Node.js, design</p>
+                        <p>
+                            <h4 style="display: inline-block">Description:</h4> This light-weight simple-structured API uses mongoose npm package to connect and fetch data from MongoDB
+                            </p>
+                        <div class="view-button">view</div>
+                    </div>
+
+                    <div class="open-box">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/cancel-button.png" class="close-button">
+                        <h1>A simple MEAN stack application to demonstrate Login, SignUp and Change Password Flow leveraging Crypto.js library</h1>
+                        <p>
+                            <h4 style="display: inline-block">URL:</h4> https://github.com/jadhavnikhil953/Login-Signup-ChangePassword-Flow-with-Adaptive-Cards</p>
+                        <p>
+                            <h4 style="display: inline-block">What I did:</h4> Angular, Javascript, Express.js, Adaptive Cards, Crypto.js, CSS, HTML, design</p>
+                        <p>
+                            <h4 style="display: inline-block">Description:</h4> Here, I have used AES for encrypting and decrypting sensitive information over the network calls and HmacSHA256 to hash the password before storing in the database. To demonstrate a simple use case of Adaptive cards, I have created one to display a youtube video as part of the card content.
+                            </p>
+                        <div class="view-button">view</div>
+                    </div>
+
+                    <div class="closed-box bg-4">
+                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/imac.png" width="200px"> -->
+                        <h3>CS528 Project<br> Data Privacy <br> and Security </h3>
+                        <p>View</p>
+                    </div>
+                    <div class="closed-box bg-5">
+                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/imac.png" width="200px"> -->
+                        <h3>CSP571 Project<br> Data Preparation <br> and Analysis </h3>
+                        <p>View</p>
+                    </div>
+                    <div class="closed-box bg-6">
+                        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/imac.png" width="200px"> -->
+                        <h3>CSP554 Project<br> Big Data <br> Technologies </h3>
+                        <p>View</p>
+                    </div>  
+
+                    <div class="open-box">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/cancel-button.png" class="close-button">
+                        <h1>Implementation of SP-Network Encryption method</h1>
+                        <p>
+                            <h4 style="display: inline-block">URL:</h4> https://github.com/jadhavnikhil953/CS528Project-Data-Privacy-and-Security</p>
+                        <p>
+                            <h4 style="display: inline-block">What I did:</h4> Python, Encryption, Decryption, SP-Network</p>
+                        <p>
+                            <h4 style="display: inline-block">Description:</h4> This project explores three fundamental techniques used in encryption: Substitution cipher, Transposition cipher (also known as Permutation cipher), and bitwise XORing. When Substitution cipher and Transposition cipher are combined, they form a Substitution-Permutation Network (SPN).
+                        </p>
+                        <div class="view-button">view</div>
+                    </div>
+                    <div class="open-box">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/cancel-button.png" class="close-button">
+                        <h1>here's a cool project (5)</h1>
+                        <p>
+                        <h4 style="display: inline-block">URL:</h4> https://codepen.io/ambika</p>
+                        <p>
+                        <h4 style="display: inline-block">What I did:</h4> Javascript, CSS, HTML, design</p>
+                        <p>
+                        <h4 style="display: inline-block">Description:</h4> Direct trade ramps mlkshk, actually shabby chic pop-up pitchfork. Skateboard PBR&B trust fund bitters master cleanse. Fap meditation brunch tumblr, ugh wayfarers try-hard franzen typewriter kitsch chambray gochujang leggings put a bird on it.
+                        </p>
+                        <div class="view-button">view</div>
+                    </div>
+                    <div class="open-box">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495601/cancel-button.png" class="close-button">
+                        <h1>here's a cool project (6)</h1>
+                        <p>
+                        <h4 style="display: inline-block">URL:</h4> https://codepen.io/ambika</p>
+                        <p>
+                        <h4 style="display: inline-block">What I did:</h4> Javascript, CSS, HTML, design</p>
+                        <p>
+                        <h4 style="display: inline-block">Description:</h4> Direct trade ramps mlkshk, actually shabby chic pop-up pitchfork. Skateboard PBR&B trust fund bitters master cleanse. Fap meditation brunch tumblr, ugh wayfarers try-hard franzen typewriter kitsch chambray gochujang leggings put a bird on it.
+                        </p>
+                        <div class="view-button">view</div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <div class="spacer"></div>
+
+            <footer class="footer-container">
+                <div class="contact-details">
+                    <!-- <a href=""><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI5MS4zMiAyOTEuMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5MS4zMiAyOTEuMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiMyQjQxNEQ7IiBkPSJNMTQ1LjY2LDBDNjUuMjE5LDAsMCw2NS4yMTksMCwxNDUuNjZjMCw4MC40NSw2NS4yMTksMTQ1LjY2LDE0NS42NiwxNDUuNjYNCgkJczE0NS42Ni02NS4yMSwxNDUuNjYtMTQ1LjY2QzI5MS4zMTksNjUuMjE5LDIyNi4xLDAsMTQ1LjY2LDB6IE0xODYuNDYyLDI1Ni42MjVjLTAuODM4LTExLjM5OC0xLjc3NS0yNS41MTgtMS44My0zMS4yMzUNCgkJYy0wLjM2NC00LjM4OC0wLjgzOC0xNS41NDktMTEuNDM0LTIyLjY3N2M0Mi4wNjgtMy41MjMsNjIuMDg3LTI2Ljc3NCw2My41MjYtNTcuNDk5YzEuMjAyLTE3LjQ5Ny01Ljc1NC0zMi44ODMtMTguMTA3LTQ1LjMNCgkJYzAuNjI4LTEzLjI4Mi0wLjQwMS0yOS4wMjMtMS4yNTYtMzUuOTQxYy05LjQ4Ni0yLjczMS0zMS42MDgsOC45NDktMzcuNzksMTMuOTQ3Yy0xMy4wMzctNS4wNjItNDQuOTQ1LTYuODM3LTY0LjMzNiwwDQoJCWMtMTMuNzQ3LTkuNjY4LTI5LjM5Ni0xNS42NC0zNy45MjYtMTMuOTc0Yy03Ljg3NSwxNy40NTItMi44MTMsMzMuOTQ4LTEuMjc1LDM1LjkxNGMtMTAuMTQyLDkuMjY4LTI0LjI4OSwyMC42NzUtMjAuNDQ3LDQ0LjU3Mg0KCQljNi4xNjMsMzUuMDQsMzAuODE2LDUzLjk0LDcwLjUwOCw1OC41NjRjLTguNDY2LDEuNzMtOS44OTYsOC4wNDgtMTAuNjA2LDEwLjc4OGMtMjYuNjU2LDEwLjk5Ny0zNC4yNzUtNi43OTEtMzcuNjQ0LTExLjQyNQ0KCQljLTExLjE4OC0xMy44NDctMjEuMjMtOS44MzItMjEuODQ5LTkuNjE0Yy0wLjYwMSwwLjIxOC0xLjA1NiwxLjA5Mi0wLjk5MiwxLjUxMWMwLjU2NCwyLjk4Niw2LjY1NSw2LjAxOCw2Ljk1NSw2LjI2Mw0KCQljOC4yNTcsNi4xNTQsMTEuMzE2LDE3LjI3LDEzLjIsMjAuNDM4YzExLjg0NCwxOS40NzMsMzkuMzc0LDExLjM5OCwzOS42MzgsMTEuNTYyYzAuMDE4LDEuNzAyLTAuMTkxLDE2LjAzMi0wLjM1NSwyNy4xODQNCgkJQzY0LjI0NSwyNDUuOTkyLDI3LjMxMSwyMDAuMiwyNy4zMTEsMTQ1LjY2YzAtNjUuMzY1LDUyLjk4NC0xMTguMzQ4LDExOC4zNDgtMTE4LjM0OFMyNjQuMDA4LDgwLjI5NSwyNjQuMDA4LDE0NS42Ng0KCQlDMjY0LjAwOCwxOTYuNjY4LDIzMS42OSwyMzkuOTkyLDE4Ni40NjIsMjU2LjYyNXoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" alt=""></a> -->
+
+                </div>
+            </footer>
+        
         </div>
     </body>
+    <script src="./js/app.js"></script>
 </html>
