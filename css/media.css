@@ -1,4 +1,4 @@
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
     .outline {
         max-width: 640px;
     }    
@@ -35,7 +35,7 @@
     .outline {
         max-width: 1536px;
     }
-}
+} */
 
 @media (max-aspect-ratio: 1/1){
     .content{
